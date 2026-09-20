@@ -27,7 +27,7 @@ export default function ContactSection() {
     setIsSubmitting(true);
     setSubmitError('');
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'f4f717b3-eaa8-4f1e-9139-39336e93074c';
 
     if (!accessKey) {
       setSubmitError('Web3Forms access key is missing. Add VITE_WEB3FORMS_ACCESS_KEY to your .env file.');
