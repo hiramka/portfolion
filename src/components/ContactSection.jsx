@@ -110,8 +110,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="info-label">Call / WhatsApp</div>
-                    <a href="tel:+18005552723" className="info-value">
-                      +1 (800) 555-ASCEND
+                    <a href="https://wa.me/254715641618" target="_blank" rel="noopener noreferrer" className="info-value">
+                      0715641618
                     </a>
                   </div>
                 </div>
@@ -121,8 +121,8 @@ export default function ContactSection() {
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <div className="info-label">Headquarters</div>
-                    <div className="info-value">79 Madison Ave, New York, NY 10016</div>
+                    <div className="info-label">Location</div>
+                    <div className="info-value">Digital & Global Agency</div>
                   </div>
                 </div>
 
@@ -132,7 +132,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="info-label">Business Hours</div>
-                    <div className="info-value">Monday – Friday: 8:00 AM – 7:00 PM EST</div>
+                    <div className="info-value">24/7 Support & Availability</div>
                   </div>
                 </div>
               </div>
