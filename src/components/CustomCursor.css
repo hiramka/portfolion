@@ -1,0 +1,63 @@
+/* Custom Glow Cursor Styling */
+.cursor-dot {
+  position: fixed;
+  top: -6px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  background-color: #1AECF5;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 12px rgba(26, 236, 245, 0.8), 0 0 20px rgba(115, 96, 242, 0.6);
+  transition: width 0.15s ease, height 0.15s ease, background-color 0.15s ease, opacity 0.15s ease;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: -24px;
+  left: -24px;
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid rgba(26, 236, 245, 0.5);
+  background: radial-gradient(circle, rgba(26, 236, 245, 0.08) 0%, rgba(115, 96, 242, 0.02) 70%, transparent 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  backdrop-filter: blur(1px);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s ease, 
+              background 0.25s ease,
+              top 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              left 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Hover States for Interactive Elements */
+.cursor-dot.hovered {
+  width: 8px;
+  height: 8px;
+  background-color: #FF7268;
+  box-shadow: 0 0 16px rgba(255, 114, 104, 0.9);
+}
+
+.cursor-ring.hovered {
+  top: -36px;
+  left: -36px;
+  width: 72px;
+  height: 72px;
+  border-color: rgba(115, 96, 242, 0.8);
+  background: radial-gradient(circle, rgba(115, 96, 242, 0.18) 0%, rgba(26, 236, 245, 0.08) 70%, transparent 100%);
+}
+
+/* Click Active State */
+.cursor-dot.clicked {
+  transform: scale(0.6);
+}
+
+.cursor-ring.clicked {
+  transform: scale(0.85);
+  border-color: #1AECF5;
+}
