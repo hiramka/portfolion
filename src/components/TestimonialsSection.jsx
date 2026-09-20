@@ -12,7 +12,7 @@ export default function TestimonialsSection() {
       company: 'Apex Capital Inc.',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
       rating: 5,
-      quote: 'Ascendancy Solutions completely redesigned our financial web application. Our client engagement surged by 340% within weeks, and their team delivered ahead of schedule with flawless code quality.'
+      quote: 'Hiram and the Ascendancy Solutions team completely redesigned our financial web application. Our client engagement surged by 340% within weeks, and Hiram delivered ahead of schedule with flawless code quality.'
     },
     {
       name: 'Elena Rostova',
@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
       company: 'Aura International',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
       rating: 5,
-      quote: 'The e-commerce store built by Ascendancy Solutions transformed our business. Mobile conversions jumped by 42% and we generated over $1.8M during our launch quarter. Highly recommended digital partners!'
+      quote: 'The e-commerce store built by Hiram transformed our business. Mobile conversions jumped by 42% and we generated over $1.8M during our launch quarter. Hiram is a highly recommended digital partner!'
     },
     {
       name: 'David Chen',
@@ -28,7 +28,7 @@ export default function TestimonialsSection() {
       company: 'Pulse Health Technologies',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
       rating: 5,
-      quote: 'Our mobile app required complex offline sync and biometric login. Ascendancy Solutions executed the UI design and cross-platform build effortlessly. We reached 120,000+ app downloads in under 6 months.'
+      quote: 'Our mobile app required complex offline sync and biometric login. Hiram executed the UI design and cross-platform build effortlessly. We reached 120,000+ app downloads in under 6 months.'
     }
   ];
 

@@ -5,6 +5,7 @@ import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import PortfolioSection from './components/PortfolioSection';
 import TestimonialsSection from './components/TestimonialsSection';
+import FaqSection from './components/FaqSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
@@ -31,6 +32,7 @@ export default function App() {
         <ServicesSection onGetStarted={handleScrollToContact} />
         <PortfolioSection />
         <TestimonialsSection />
+        <FaqSection />
         <ContactSection />
       </main>
 
