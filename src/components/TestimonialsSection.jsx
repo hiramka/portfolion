@@ -84,7 +84,7 @@ export default function TestimonialsSection() {
             <p className="quote-text">"{current.quote}"</p>
 
             <div className="client-info-row">
-              <img src={current.image} alt={current.name} className="client-avatar" />
+              <img src={current.image} alt={current.name} className="client-avatar" loading="lazy" decoding="async" />
               <div>
                 <h4 className="client-name">{current.name}</h4>
                 <div className="client-role">{current.role} • <strong>{current.company}</strong></div>

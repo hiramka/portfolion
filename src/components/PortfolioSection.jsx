@@ -115,7 +115,7 @@ export default function PortfolioSection() {
           {filteredProjects.map((project) => (
             <div key={project.id} className="project-card glass-card">
               <div className="project-image-wrap">
-                <img src={project.image} alt={project.title} className="project-img" />
+                <img src={project.image} alt={project.title} className="project-img" loading="lazy" decoding="async" />
                 <div className="project-overlay">
                   <button 
                     onClick={() => setSelectedCaseStudy(project)} 

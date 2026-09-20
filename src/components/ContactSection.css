@@ -131,6 +131,16 @@ a.info-value:hover {
   gap: 20px;
 }
 
+.form-error-message {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 82, 82, 0.1);
+  border: 1px solid rgba(255, 82, 82, 0.28);
+  color: #ffd7d7;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;

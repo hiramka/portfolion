@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Sparkles, MessageSquare } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Sparkles } from 'lucide-react';
 import './ContactSection.css';
+
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,19 +15,58 @@ export default function ContactSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (submitError) setSubmitError('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
 
-    setTimeout(() => {
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      setSubmitError('Web3Forms access key is missing. Add VITE_WEB3FORMS_ACCESS_KEY to your .env file.');
       setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          service: formData.service,
+          budget: formData.budget,
+          subject: `New inquiry from ${formData.name}`,
+          from_name: formData.name,
+          replyto: formData.email
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.message || 'The form could not be submitted. Please try again.');
+      }
+
       setSubmitted(true);
-    }, 1500);
+    } catch (error) {
+      setSubmitError(error.message || 'Something went wrong while sending the message.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -119,6 +160,7 @@ export default function ContactSection() {
                   <button 
                     onClick={() => {
                       setSubmitted(false);
+                      setSubmitError('');
                       setFormData({
                         name: '',
                         email: '',
@@ -135,6 +177,12 @@ export default function ContactSection() {
               ) : (
                 <form onSubmit={handleSubmit} className="contact-form">
                   <h3 className="form-heading">Send Us a Message</h3>
+
+                  {submitError && (
+                    <div className="form-error-message" role="alert">
+                      {submitError}
+                    </div>
+                  )}
 
                   <div className="form-group-row">
                     <div className="form-group">

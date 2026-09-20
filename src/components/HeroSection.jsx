@@ -72,6 +72,8 @@ export default function HeroSection({ onGetStarted }) {
                 src="/images/web_app.png" 
                 alt="Ascendancy Engine Dashboard" 
                 className="hero-dashboard-img"
+                decoding="async"
+                fetchPriority="high"
               />
 
               {/* Floating Stat Badges */}

@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './CustomCursor.css';
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [followerPosition, setFollowerPosition] = useState({ x: -100, y: -100 });
-  const [isHovered, setIsHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const dotRef = useRef(null);
+  const ringRef = useRef(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
@@ -24,17 +22,28 @@ export default function CustomCursor() {
     const handleMouseMove = (e) => {
       targetX = e.clientX;
       targetY = e.clientY;
-      setPosition({ x: targetX, y: targetY });
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+      }
     };
 
-    const handleMouseDown = () => setIsClicked(true);
-    const handleMouseUp = () => setIsClicked(false);
+    const handleMouseDown = () => {
+      if (dotRef.current) dotRef.current.classList.add('clicked');
+      if (ringRef.current) ringRef.current.classList.add('clicked');
+    };
 
-    // Smooth lerp loop for outer ring
+    const handleMouseUp = () => {
+      if (dotRef.current) dotRef.current.classList.remove('clicked');
+      if (ringRef.current) ringRef.current.classList.remove('clicked');
+    };
+
+    // Smooth lerp loop for outer ring directly via DOM
     const render = () => {
-      followerX += (targetX - followerX) * 0.18;
-      followerY += (targetY - followerY) * 0.18;
-      setFollowerPosition({ x: followerX, y: followerY });
+      followerX += (targetX - followerX) * 0.2;
+      followerY += (targetY - followerY) * 0.2;
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`;
+      }
       animationFrameId = requestAnimationFrame(render);
     };
 
@@ -43,7 +52,7 @@ export default function CustomCursor() {
     // Mouse over interactive elements listener
     const handleMouseOver = (e) => {
       const target = e.target;
-      if (
+      const isInteractive = (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
         target.tagName === 'INPUT' ||
@@ -55,14 +64,18 @@ export default function CustomCursor() {
         target.closest('.portfolio-card') ||
         target.closest('.service-card') ||
         target.closest('.social-icon-btn')
-      ) {
-        setIsHovered(true);
+      );
+
+      if (isInteractive) {
+        if (dotRef.current) dotRef.current.classList.add('hovered');
+        if (ringRef.current) ringRef.current.classList.add('hovered');
       } else {
-        setIsHovered(false);
+        if (dotRef.current) dotRef.current.classList.remove('hovered');
+        if (ringRef.current) ringRef.current.classList.remove('hovered');
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     window.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
     window.addEventListener('mouseover', handleMouseOver);
@@ -80,16 +93,8 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Central Neon Dot */}
-      <div 
-        className={`cursor-dot ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
-        style={{ transform: `translate3d(${position.x}px, ${position.y}px, 0)` }}
-      />
-      {/* Outer Glowing Ring */}
-      <div 
-        className={`cursor-ring ${isHovered ? 'hovered' : ''} ${isClicked ? 'clicked' : ''}`}
-        style={{ transform: `translate3d(${followerPosition.x}px, ${followerPosition.y}px, 0)` }}
-      />
+      <div ref={dotRef} className="cursor-dot" />
+      <div ref={ringRef} className="cursor-ring" />
     </>
   );
 }
