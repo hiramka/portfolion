@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Cpu, Palette, BarChart3, CheckCircle2 } from 'lucide-react';
+import { Target, Cpu, Palette, BarChart3, CheckCircle2, FileDown } from 'lucide-react';
 import './AboutSection.css';
 
 export default function AboutSection() {
@@ -68,6 +68,18 @@ export default function AboutSection() {
                 <CheckCircle2 size={20} className="check-icon" />
                 <span>Full source code ownership & 24/7 post-launch support</span>
               </div>
+            </div>
+
+            <div className="about-deck-wrap">
+              <a 
+                href="/docs/Ascendancy_Solutions_Capabilities_Deck_2026.pdf" 
+                download="Ascendancy_Solutions_Agency_Deck_2026.pdf" 
+                className="btn-secondary about-deck-btn"
+                title="Download our official 2026 agency deck"
+              >
+                <FileDown size={18} />
+                <span>Download Agency Deck (PDF)</span>
+              </a>
             </div>
           </div>
 

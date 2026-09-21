@@ -74,9 +74,11 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
             {/* Showcase Visual Content */}
             <div className="card-inner-visual">
               <img 
-                src="/images/web_app.png" 
+                src="/images/web_app.webp" 
                 alt="Ascendancy Engine Dashboard" 
                 className="hero-dashboard-img"
+                width="600"
+                height="380"
                 decoding="async"
                 fetchPriority="high"
               />

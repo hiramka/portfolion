@@ -200,6 +200,9 @@ export default function DiscoveryCallModal({ isOpen, onClose, initialData = {} }
               </div>
             ) : (
               <form onSubmit={handleBookingSubmit} className="discovery-form">
+                {/* Honeypot Spam Protection for Web3Forms */}
+                <input type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" style={{ display: 'none' }} />
+
                 {submitError && (
                   <div className="form-error-message" role="alert">
                     {submitError}

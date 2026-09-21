@@ -14,7 +14,7 @@ export default function PortfolioSection() {
       id: 'fintech-saas',
       title: 'Apex Vault - Financial Analytics Platform',
       category: 'Web Development',
-      image: '/images/web_app.png',
+      image: '/images/web_app.webp',
       impact: '+340% User Engagement',
       client: 'Apex Capital Inc.',
       techStack: ['React', 'Vite', 'Node.js', 'Chart.js'],
@@ -31,7 +31,7 @@ export default function PortfolioSection() {
       id: 'fit-mobile-app',
       title: 'PulseFit - AI Health & Workout Companion',
       category: 'Mobile Apps',
-      image: '/images/mobile_app.png',
+      image: '/images/mobile_app.webp',
       impact: '4.9★ App Store Rating',
       client: 'Pulse Health Technologies',
       techStack: ['React Native', 'TypeScript', 'GraphQL', 'Firebase'],
@@ -48,7 +48,7 @@ export default function PortfolioSection() {
       id: 'luxury-storefront',
       title: 'Aura Luxe - High-Fashion E-Commerce',
       category: 'E-Commerce',
-      image: '/images/ecommerce.png',
+      image: '/images/ecommerce.webp',
       impact: '$1.8M Revenue Generated',
       client: 'Aura International Brand',
       techStack: ['Headless Shopify', 'React', 'Stripe', 'Tailwind'],
@@ -65,7 +65,7 @@ export default function PortfolioSection() {
       id: 'brand-identity-system',
       title: 'Vanguard Cyber - Full Brand Identity',
       category: 'Branding & Design',
-      image: '/images/branding.png',
+      image: '/images/branding.webp',
       impact: 'Global Rebrand Award',
       client: 'Vanguard Security Corp',
       techStack: ['Figma', 'Brand Design', 'UI/UX', 'Vector Motion'],
@@ -115,7 +115,15 @@ export default function PortfolioSection() {
           {filteredProjects.map((project) => (
             <div key={project.id} className="project-card glass-card">
               <div className="project-image-wrap">
-                <img src={project.image} alt={project.title} className="project-img" loading="lazy" decoding="async" />
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="project-img" 
+                  loading="lazy" 
+                  decoding="async" 
+                  width="600" 
+                  height="380" 
+                />
                 <div className="project-overlay">
                   <button 
                     onClick={() => setSelectedCaseStudy(project)} 
