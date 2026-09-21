@@ -132,5 +132,6 @@ The project is pre-configured for seamless zero-config deployment on **Vercel**:
 
 - **Agency**: Ascendancy Solutions
 - **Website**: [ascendancysolutions.vercel.app](https://ascendancysolutions.vercel.app/)
+- **Instagram**: [@ascendancy_solutions](https://www.instagram.com/ascendancy_solutions)
 - **Email**: [hello@ascendancysolutions.com](mailto:hello@ascendancysolutions.com)
 - **Phone / WhatsApp**: +254 715 641 618

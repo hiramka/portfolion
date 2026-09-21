@@ -135,6 +135,23 @@ export default function ContactSection({ onBookCall }) {
                     <div className="info-value">24/7 Support & Availability</div>
                   </div>
                 </div>
+
+                <div className="info-item">
+                  <div className="info-icon-box icon-coral">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  </div>
+                  <div>
+                    <div className="info-label">Instagram</div>
+                    <a 
+                      href="https://www.instagram.com/ascendancy_solutions" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="info-value"
+                    >
+                      @ascendancy_solutions
+                    </a>
+                  </div>
+                </div>
               </div>
 
               <div className="consultation-callout glass-card">
@@ -189,6 +206,9 @@ export default function ContactSection({ onBookCall }) {
               ) : (
                 <form onSubmit={handleSubmit} className="contact-form">
                   <h3 className="form-heading">Send Us a Message</h3>
+
+                  {/* Honeypot Spam Protection */}
+                  <input type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" style={{ display: 'none' }} />
 
                   {submitError && (
                     <div className="form-error-message" role="alert">
