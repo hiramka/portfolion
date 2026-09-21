@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Rocket, Send, Heart } from 'lucide-react';
+import { Send } from 'lucide-react';
 import './Footer.css';
 
-export default function Footer() {
+export default function Footer({ onOpenLegal }) {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -115,9 +115,27 @@ export default function Footer() {
             © {new Date().getFullYear()} Ascendancy Solutions. All rights reserved.
           </div>
           <div className="footer-legal-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Security</a>
+            <button 
+              type="button" 
+              onClick={() => onOpenLegal && onOpenLegal('privacy')} 
+              className="legal-footer-btn"
+            >
+              Privacy Policy
+            </button>
+            <button 
+              type="button" 
+              onClick={() => onOpenLegal && onOpenLegal('terms')} 
+              className="legal-footer-btn"
+            >
+              Terms of Service
+            </button>
+            <button 
+              type="button" 
+              onClick={() => onOpenLegal && onOpenLegal('security')} 
+              className="legal-footer-btn"
+            >
+              Security
+            </button>
           </div>
         </div>
       </div>

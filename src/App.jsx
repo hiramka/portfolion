@@ -11,10 +11,14 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import DiscoveryCallModal from './components/DiscoveryCallModal';
 import FloatingConversionWidget from './components/FloatingConversionWidget';
+import LegalModal from './components/LegalModal';
 
 export default function App() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [bookingData, setBookingData] = useState({});
+
+  const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
+  const [legalTab, setLegalTab] = useState('privacy');
 
   const handleOpenBooking = (initialData = {}) => {
     setBookingData(initialData);
@@ -23,6 +27,15 @@ export default function App() {
 
   const handleCloseBooking = () => {
     setIsBookingModalOpen(false);
+  };
+
+  const handleOpenLegal = (tab = 'privacy') => {
+    setLegalTab(tab);
+    setIsLegalModalOpen(true);
+  };
+
+  const handleCloseLegal = () => {
+    setIsLegalModalOpen(false);
   };
 
   const handleScrollToContact = (_prefillData = null) => {
@@ -56,14 +69,22 @@ export default function App() {
         <ContactSection onBookCall={() => handleOpenBooking()} />
       </main>
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer with Legal Compliance triggers */}
+      <Footer onOpenLegal={handleOpenLegal} />
 
       {/* 1-Click Interactive Discovery Call Modal */}
       <DiscoveryCallModal 
         isOpen={isBookingModalOpen} 
         onClose={handleCloseBooking} 
         initialData={bookingData} 
+      />
+
+      {/* Legal & Corporate Compliance Modal (Privacy, Terms, Security) */}
+      <LegalModal
+        isOpen={isLegalModalOpen}
+        onClose={handleCloseLegal}
+        activeTab={legalTab}
+        onTabChange={setLegalTab}
       />
 
       {/* Floating Lead Conversion Widget */}

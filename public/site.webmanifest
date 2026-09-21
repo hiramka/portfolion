@@ -1,0 +1,23 @@
+{
+  "name": "Ascendancy Solutions | Digital Agency",
+  "short_name": "Ascendancy",
+  "description": "High-Converting Websites, Apps & Digital Growth Experiences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070814",
+  "theme_color": "#070814",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

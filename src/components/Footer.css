@@ -134,14 +134,23 @@
   gap: 24px;
 }
 
-.footer-legal-links a {
+.footer-legal-links a,
+.legal-footer-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.9rem;
   color: var(--text-dim);
   text-decoration: none;
+  cursor: pointer;
   transition: var(--transition-fast);
 }
 
-.footer-legal-links a:hover {
-  color: var(--text-muted);
+.footer-legal-links a:hover,
+.legal-footer-btn:hover {
+  color: var(--accent-cyan);
+  text-decoration: underline;
 }
 
 @media (max-width: 992px) {
