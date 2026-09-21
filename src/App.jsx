@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -9,9 +9,23 @@ import FaqSection from './components/FaqSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import DiscoveryCallModal from './components/DiscoveryCallModal';
+import FloatingConversionWidget from './components/FloatingConversionWidget';
 
 export default function App() {
-  const handleScrollToContact = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [bookingData, setBookingData] = useState({});
+
+  const handleOpenBooking = (initialData = {}) => {
+    setBookingData(initialData);
+    setIsBookingModalOpen(true);
+  };
+
+  const handleCloseBooking = () => {
+    setIsBookingModalOpen(false);
+  };
+
+  const handleScrollToContact = (_prefillData = null) => {
     const contactElem = document.getElementById('contact');
     if (contactElem) {
       contactElem.scrollIntoView({ behavior: 'smooth' });
@@ -23,21 +37,39 @@ export default function App() {
       <CustomCursor />
 
       {/* Navigation */}
-      <Navbar onGetStarted={handleScrollToContact} />
+      <Navbar 
+        onGetStarted={handleScrollToContact} 
+        onBookCall={() => handleOpenBooking()} 
+      />
 
       {/* Main Sections */}
       <main>
-        <HeroSection onGetStarted={handleScrollToContact} />
+        <HeroSection 
+          onGetStarted={handleScrollToContact} 
+          onBookCall={() => handleOpenBooking()} 
+        />
         <AboutSection />
         <ServicesSection onGetStarted={handleScrollToContact} />
         <PortfolioSection />
         <TestimonialsSection />
         <FaqSection />
-        <ContactSection />
+        <ContactSection onBookCall={() => handleOpenBooking()} />
       </main>
 
       {/* Footer */}
       <Footer />
+
+      {/* 1-Click Interactive Discovery Call Modal */}
+      <DiscoveryCallModal 
+        isOpen={isBookingModalOpen} 
+        onClose={handleCloseBooking} 
+        initialData={bookingData} 
+      />
+
+      {/* Floating Lead Conversion Widget */}
+      <FloatingConversionWidget 
+        onOpenBooking={() => handleOpenBooking()} 
+      />
     </div>
   );
 }

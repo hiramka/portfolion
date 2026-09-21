@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Calendar } from 'lucide-react';
 import './ContactSection.css';
 
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
-export default function ContactSection() {
+export default function ContactSection({ onBookCall }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     service: 'Web Design & Development',
-    budget: '$250 - $500',
+    budget: 'Open to Discussion',
     message: ''
   });
 
@@ -137,12 +137,24 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="consultation-callout">
-                <Sparkles size={20} className="callout-sparkle" />
-                <div>
-                  <strong>Need Immediate Assistance?</strong>
-                  <p>Book a direct 15-minute video call with our Technical Director.</p>
+              <div className="consultation-callout glass-card">
+                <div className="consultation-callout-top">
+                  <div className="callout-icon-wrap">
+                    <Calendar size={22} className="callout-sparkle" />
+                  </div>
+                  <div>
+                    <strong>Need Immediate Technical Scoping?</strong>
+                    <p>Book a direct 15-minute 1-on-1 strategy call with our Technical Director.</p>
+                  </div>
                 </div>
+                <button 
+                  type="button" 
+                  onClick={onBookCall} 
+                  className="btn-primary callout-booking-btn"
+                >
+                  <Calendar size={16} />
+                  <span>Book Free 15-Min Call</span>
+                </button>
               </div>
             </div>
           </div>
@@ -165,7 +177,7 @@ export default function ContactSection() {
                         name: '',
                         email: '',
                         service: 'Web Design & Development',
-                        budget: '$250 - $500',
+                        budget: 'Open to Discussion',
                         message: ''
                       });
                     }}
@@ -231,17 +243,17 @@ export default function ContactSection() {
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label">Estimated Budget Range</label>
+                      <label className="form-label">Estimated Budget / Scope</label>
                       <select 
                         name="budget" 
                         value={formData.budget} 
                         onChange={handleChange}
                         className="form-select"
                       >
-                        <option value="Under $250">Under $250</option>
-                        <option value="$250 - $500">$250 - $500</option>
-                        <option value="$500 - $750">$500 - $750</option>
-                        <option value="$750 - $1,000">$750 - $1,000</option>
+                        <option value="Open to Discussion">Let's Discuss (Flexible)</option>
+                        <option value="Starter / MVP ($250 - $500)">Starter / MVP ($250 - $500)</option>
+                        <option value="Growth ($500 - $1,000)">Growth ($500 - $1,000)</option>
+                        <option value="Custom / Enterprise ($1,000+)">Custom / Enterprise ($1,000+)</option>
                       </select>
                     </div>
                   </div>

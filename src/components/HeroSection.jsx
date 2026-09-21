@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArrowRight, Sparkles, ShieldCheck, TrendingUp, Zap, Star } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, TrendingUp, Zap, Star, Calendar } from 'lucide-react';
 import './HeroSection.css';
 
-export default function HeroSection({ onGetStarted }) {
+export default function HeroSection({ onGetStarted, onBookCall }) {
   return (
     <section id="home" className="hero-section">
       <div className="bg-glow-purple hero-glow-top"></div>
@@ -29,15 +29,20 @@ export default function HeroSection({ onGetStarted }) {
           </p>
 
           <div className="hero-actions">
-            <a href="#services" className="btn-primary hero-btn-main">
+            <button onClick={onBookCall} className="btn-primary hero-btn-main">
+              <Calendar size={18} />
+              <span>Book Discovery Call</span>
+            </button>
+
+            <a href="#services" className="btn-secondary hero-btn-secondary">
               <span>Explore Services</span>
               <ArrowRight size={18} />
             </a>
 
-            <button onClick={onGetStarted} className="btn-secondary hero-btn-estimator">
-              <Zap size={18} className="btn-icon-cyan" />
-              <span>Get in Touch</span>
-            </button>
+            <div className="hero-action-badge">
+              <span className="pulse-mini-dot"></span>
+              <span>Free 15-Min Strategy Session</span>
+            </div>
           </div>
 
           {/* Social Proof Trust Bar */}

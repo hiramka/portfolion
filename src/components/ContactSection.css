@@ -82,30 +82,62 @@ a.info-value:hover {
 
 .consultation-callout {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px;
+  border-radius: var(--radius-md);
+  background: rgba(115, 96, 242, 0.12);
+  border: 1px solid rgba(115, 96, 242, 0.35);
+  box-shadow: 0 10px 25px rgba(115, 96, 242, 0.15);
+  transition: var(--transition-normal);
+}
+
+.consultation-callout:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 12px 30px rgba(26, 236, 245, 0.15);
+}
+
+.consultation-callout-top {
+  display: flex;
   align-items: flex-start;
   gap: 14px;
-  padding: 20px;
-  border-radius: 14px;
-  background: rgba(115, 96, 242, 0.1);
-  border: 1px solid rgba(115, 96, 242, 0.25);
+}
+
+.callout-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(26, 236, 245, 0.15);
+  border: 1px solid rgba(26, 236, 245, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .callout-sparkle {
   color: var(--accent-cyan);
-  flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .consultation-callout strong {
   display: block;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #FFFFFF;
   margin-bottom: 4px;
 }
 
 .consultation-callout p {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.callout-booking-btn {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 0.92rem;
+  justify-content: center;
+  gap: 8px;
 }
 
 /* Contact Form Styling */

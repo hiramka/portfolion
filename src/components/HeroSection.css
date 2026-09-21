@@ -70,15 +70,50 @@
 .hero-btn-main {
   padding: 16px 36px;
   font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.hero-btn-estimator {
+.hero-btn-secondary {
   padding: 16px 32px;
   font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
 
 .btn-icon-cyan {
   color: var(--accent-cyan);
+}
+
+.hero-action-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(53, 225, 180, 0.1);
+  border: 1px solid rgba(53, 225, 180, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #35E1B4;
+}
+
+.pulse-mini-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #35E1B4;
+  box-shadow: 0 0 8px #35E1B4;
+  animation: pulseMini 1.6s infinite;
+}
+
+@keyframes pulseMini {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
 }
 
 .hero-trust-bar {

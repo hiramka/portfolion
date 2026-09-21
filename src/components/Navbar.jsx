@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Rocket, Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Calendar } from 'lucide-react';
 import './Navbar.css';
 
-export default function Navbar({ onGetStarted }) {
+export default function Navbar({ onGetStarted, onBookCall }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -47,6 +47,11 @@ export default function Navbar({ onGetStarted }) {
 
         {/* Action Button */}
         <div className="nav-cta-wrap">
+          <button onClick={onBookCall} className="nav-book-btn">
+            <Calendar size={15} />
+            <span>Book Call</span>
+          </button>
+
           <button onClick={onGetStarted} className="btn-primary nav-cta-btn">
             <span>Get a Quote</span>
             <ArrowRight size={16} className="btn-arrow" />
@@ -76,15 +81,26 @@ export default function Navbar({ onGetStarted }) {
                 {link.name}
               </a>
             ))}
-            <button 
-              className="btn-primary mobile-cta-btn"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onGetStarted();
-              }}
-            >
-              Get a Quote <ArrowRight size={16} />
-            </button>
+            <div className="mobile-drawer-actions">
+              <button 
+                className="btn-primary mobile-cta-btn"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onBookCall();
+                }}
+              >
+                <Calendar size={16} /> Book Free Call
+              </button>
+              <button 
+                className="btn-secondary mobile-cta-btn"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onGetStarted();
+                }}
+              >
+                Get a Quote <ArrowRight size={16} />
+              </button>
+            </div>
           </nav>
         </div>
       )}

@@ -98,12 +98,37 @@
 .nav-cta-wrap {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+}
+
+.nav-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  background: rgba(115, 96, 242, 0.12);
+  border: 1px solid rgba(115, 96, 242, 0.35);
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.nav-book-btn svg {
+  color: var(--accent-cyan);
+}
+
+.nav-book-btn:hover {
+  background: rgba(115, 96, 242, 0.25);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(26, 236, 245, 0.2);
 }
 
 .nav-cta-btn {
-  padding: 10px 24px;
-  font-size: 0.9rem;
+  padding: 10px 22px;
+  font-size: 0.88rem;
 }
 
 .nav-cta-btn .btn-arrow {
@@ -158,10 +183,14 @@
     font-weight: 600;
     padding: 8px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  .mobile-drawer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
   }
   .mobile-cta-btn {
     width: 100%;
     justify-content: center;
-    margin-top: 12px;
   }
 }
