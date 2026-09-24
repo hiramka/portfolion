@@ -1,3 +1,38 @@
+# Environment Files & Secrets (NEVER COMMIT TO GIT)
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+*.env
+*.env.*
+
+# API Keys, Credentials & Private Certificates
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+*.asc
+credentials.json
+secrets.json
+service-account*.json
+id_rsa
+id_ed25519
+
+# Node Dependencies
+node_modules
+/node_modules
+
+# Build & Production Outputs
+dist
+dist-ssr
+build
+.output
+
 # Logs
 logs
 *.log
@@ -7,16 +42,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# Editor & OS files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
