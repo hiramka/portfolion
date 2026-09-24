@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import React, { useState, lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { ToastProvider } from './context/ToastContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import QuickstartGuide from './components/template/QuickstartGuide';
-import ComponentCatalog from './components/template/ComponentCatalog';
-import ApiSandbox from './components/template/ApiSandbox';
-import SampleProductApp from './components/template/SampleProductApp';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import NotFound from './components/common/NotFound';
 import SEO from './components/common/SEO';
@@ -16,7 +12,23 @@ import CodeBlock from './components/common/CodeBlock';
 import Card from './components/common/Card';
 import Badge from './components/common/Badge';
 import Button from './components/common/Button';
+import { Spinner } from './components/common/Spinner';
 import { Sparkles, Terminal, Layers, Cpu, ArrowRight } from 'lucide-react';
+
+// Performance Optimization: Dynamic Code Splitting via React.lazy()
+const QuickstartGuide = lazy(() => import('./components/template/QuickstartGuide'));
+const ComponentCatalog = lazy(() => import('./components/template/ComponentCatalog'));
+const ApiSandbox = lazy(() => import('./components/template/ApiSandbox'));
+const SampleProductApp = lazy(() => import('./components/template/SampleProductApp'));
+
+function PageLoader() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '50vh', gap: '1rem' }}>
+      <Spinner size="lg" />
+      <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Loading route bundle...</span>
+    </div>
+  );
+}
 
 function OverviewPage({ onOpenQuickstartModal }) {
   const navigate = useNavigate();
@@ -97,17 +109,19 @@ function AppContent() {
       {/* Navbar Header */}
       <Navbar onOpenQuickstart={() => setIsQuickstartModalOpen(true)} />
 
-      {/* Main View Router wrapped in ErrorBoundary */}
+      {/* Main View Router wrapped in ErrorBoundary and Suspense */}
       <main className="main-content">
         <ErrorBoundary>
-          <Routes>
-            <Route path="/" element={<OverviewPage onOpenQuickstartModal={() => setIsQuickstartModalOpen(true)} />} />
-            <Route path="/quickstart" element={<><SEO title="Quickstart Guide" /><QuickstartGuide /></>} />
-            <Route path="/catalog" element={<><SEO title="Component Catalog" /><ComponentCatalog /></>} />
-            <Route path="/services" element={<><SEO title="API & State Layer" /><ApiSandbox /></>} />
-            <Route path="/demo" element={<><SEO title="Sample Product App" /><SampleProductApp onGetStarted={() => setIsQuickstartModalOpen(true)} onOpenBooking={() => navigate('/services')} /></>} />
-            <Route path="*" element={<><SEO title="404 Not Found" /><NotFound /></>} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<OverviewPage onOpenQuickstartModal={() => setIsQuickstartModalOpen(true)} />} />
+              <Route path="/quickstart" element={<><SEO title="Quickstart Guide" /><QuickstartGuide /></>} />
+              <Route path="/catalog" element={<><SEO title="Component Catalog" /><ComponentCatalog /></>} />
+              <Route path="/services" element={<><SEO title="API & State Layer" /><ApiSandbox /></>} />
+              <Route path="/demo" element={<><SEO title="Sample Product App" /><SampleProductApp onGetStarted={() => setIsQuickstartModalOpen(true)} onOpenBooking={() => navigate('/services')} /></>} />
+              <Route path="*" element={<><SEO title="404 Not Found" /><NotFound /></>} />
+            </Routes>
+          </Suspense>
         </ErrorBoundary>
       </main>
 

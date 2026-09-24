@@ -14,11 +14,17 @@ export default defineConfig({
     target: 'esnext',
     cssCodeSplit: true,
     minify: 'esbuild',
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor';
+          // Split React core libraries into a dedicated cached chunk
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router-dom')) {
+            return 'react-vendor';
+          }
+          // Split Lucide Icons into a dedicated cached chunk
+          if (id.includes('node_modules/lucide-react')) {
+            return 'icons-vendor';
           }
         },
       },
