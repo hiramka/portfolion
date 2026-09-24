@@ -1,0 +1,62 @@
+.codeblock-container {
+  border-radius: var(--radius-md, 12px);
+  background: var(--bg-code, #0f172a);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  overflow: hidden;
+  margin: 1rem 0;
+  font-family: 'Fira Code', 'Cascadia Code', Consolas, Monaco, monospace;
+}
+
+.codeblock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+}
+
+.codeblock-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #64748b);
+}
+
+.codeblock-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  color: var(--text-secondary, #cbd5e1);
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.codeblock-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary, #f8fafc);
+}
+
+.codeblock-content {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+  white-space: pre;
+}
+
+.codeblock-content code {
+  font-family: inherit;
+}
+
+.text-success {
+  color: #10b981;
+}

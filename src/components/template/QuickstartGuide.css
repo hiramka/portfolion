@@ -1,0 +1,99 @@
+.quickstart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+
+.quickstart-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary, #f8fafc);
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.quickstart-header .subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary, #94a3b8);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.quickstart-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent-primary, #6366f1);
+  font-family: monospace;
+}
+
+.step-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary, #f8fafc);
+  margin: 0 0 0.5rem 0;
+}
+
+.step-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #94a3b8);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.step-card code {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+
+.arch-card {
+  margin-top: 1rem;
+}
+
+.arch-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.arch-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary, #f8fafc);
+}
+
+.arch-header p {
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0 0;
+  color: var(--text-secondary, #94a3b8);
+}
+
+.arch-tree pre {
+  margin: 0;
+  padding: 1.25rem;
+  background: #090d16;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  color: #a5b4fc;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.text-accent {
+  color: var(--accent-primary, #6366f1);
+}

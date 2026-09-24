@@ -1,0 +1,31 @@
+.spinner-primitive {
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--accent-primary, #6366f1);
+  border-radius: 50%;
+  animation: spinner-rotate 0.75s linear infinite;
+}
+
+.spinner-sm { width: 16px; height: 16px; border-width: 2px; }
+.spinner-md { width: 28px; height: 28px; border-width: 3px; }
+.spinner-lg { width: 44px; height: 44px; border-width: 4px; }
+
+@keyframes spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.skeleton-primitive {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.12) 37%,
+    rgba(255, 255, 255, 0.05) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-pulse 1.4s ease infinite;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}

@@ -1,0 +1,70 @@
+.card-primitive {
+  border-radius: var(--radius-lg, 16px);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+/* Padding variants */
+.card-padding-none { padding: 0; }
+.card-padding-sm { padding: 1rem; }
+.card-padding-md { padding: 1.5rem; }
+.card-padding-lg { padding: 2rem; }
+
+/* Style Variants */
+.card-glass {
+  background: var(--bg-card, rgba(30, 41, 59, 0.7));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-solid {
+  background: var(--bg-card-solid, #1e293b);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+
+.card-bordered {
+  background: transparent;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
+}
+
+.card-glow {
+  background: var(--bg-card, rgba(30, 41, 59, 0.8));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
+}
+
+/* Hoverable */
+.card-hoverable {
+  cursor: pointer;
+}
+.card-hoverable:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+/* Internal components */
+.card-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-body {
+  flex: 1;
+}
+
+.card-footer {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

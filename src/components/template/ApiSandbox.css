@@ -1,0 +1,57 @@
+.sandbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.sandbox-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary, #f8fafc);
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.sandbox-header .subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary, #94a3b8);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.sandbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .sandbox-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sandbox-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sandbox-response {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+.sandbox-response h4 {
+  font-size: 0.9375rem;
+  color: var(--text-primary, #f8fafc);
+  margin: 0 0 0.5rem 0;
+}
+
+.sandbox-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
