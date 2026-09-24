@@ -12,6 +12,8 @@ import CustomCursor from './components/CustomCursor';
 import DiscoveryCallModal from './components/DiscoveryCallModal';
 import FloatingConversionWidget from './components/FloatingConversionWidget';
 import LegalModal from './components/LegalModal';
+import ErrorBoundary from './components/ErrorBoundary';
+import SEO from './components/SEO';
 
 export default function App() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -46,51 +48,57 @@ export default function App() {
   };
 
   return (
-    <div className="app-root">
-      <CustomCursor />
+    <ErrorBoundary>
+      <div className="app-root">
+        <SEO 
+          title="Software Development & Digital Agency" 
+          description="Transforming ideas into high-converting digital products, custom web applications, and enterprise software."
+        />
+        <CustomCursor />
 
-      {/* Navigation */}
-      <Navbar 
-        onGetStarted={handleScrollToContact} 
-        onBookCall={() => handleOpenBooking()} 
-      />
-
-      {/* Main Sections */}
-      <main>
-        <HeroSection 
+        {/* Navigation */}
+        <Navbar 
           onGetStarted={handleScrollToContact} 
           onBookCall={() => handleOpenBooking()} 
         />
-        <AboutSection />
-        <ServicesSection onGetStarted={handleScrollToContact} />
-        <PortfolioSection />
-        <TestimonialsSection />
-        <FaqSection />
-        <ContactSection onBookCall={() => handleOpenBooking()} />
-      </main>
 
-      {/* Footer with Legal Compliance triggers */}
-      <Footer onOpenLegal={handleOpenLegal} />
+        {/* Main Sections */}
+        <main>
+          <HeroSection 
+            onGetStarted={handleScrollToContact} 
+            onBookCall={() => handleOpenBooking()} 
+          />
+          <AboutSection />
+          <ServicesSection onGetStarted={handleScrollToContact} />
+          <PortfolioSection />
+          <TestimonialsSection />
+          <FaqSection />
+          <ContactSection onBookCall={() => handleOpenBooking()} />
+        </main>
 
-      {/* 1-Click Interactive Discovery Call Modal */}
-      <DiscoveryCallModal 
-        isOpen={isBookingModalOpen} 
-        onClose={handleCloseBooking} 
-        initialData={bookingData} 
-      />
+        {/* Footer with Legal Compliance triggers */}
+        <Footer onOpenLegal={handleOpenLegal} />
 
-      {/* Legal & Corporate Compliance Modal (Privacy, Terms, Security) */}
-      <LegalModal
-        isOpen={isLegalModalOpen}
-        onClose={handleCloseLegal}
-        activeTab={legalTab}
-        onTabChange={setLegalTab}
-      />
+        {/* 1-Click Interactive Discovery Call Modal */}
+        <DiscoveryCallModal 
+          isOpen={isBookingModalOpen} 
+          onClose={handleCloseBooking} 
+          initialData={bookingData} 
+        />
 
-      {/* Floating Lead Conversion Widget */}
-      <FloatingConversionWidget 
-        onOpenBooking={() => handleOpenBooking()} 
-      />
-    </div>
+        {/* Legal & Corporate Compliance Modal (Privacy, Terms, Security) */}
+        <LegalModal
+          isOpen={isLegalModalOpen}
+          onClose={handleCloseLegal}
+          activeTab={legalTab}
+          onTabChange={setLegalTab}
+        />
+
+        {/* Floating Lead Conversion Widget */}
+        <FloatingConversionWidget 
+          onOpenBooking={() => handleOpenBooking()} 
+        />
+      </div>
+    </ErrorBoundary>
   );
 }
