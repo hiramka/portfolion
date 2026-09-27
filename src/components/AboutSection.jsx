@@ -1,54 +1,64 @@
 import React from 'react';
-import { Target, Cpu, Palette, BarChart3, CheckCircle2, FileDown } from 'lucide-react';
+import { Target, Cpu, Palette, BarChart3, CheckCircle2, FileDown, Code2, ShieldCheck, Zap, Rocket, Layers } from 'lucide-react';
 import './AboutSection.css';
 
 export default function AboutSection() {
-  const pillars = [
+  const processSteps = [
     {
-      icon: <Target className="pillar-icon icon-purple" />,
-      title: 'Strategic Architecture',
-      desc: 'We map every user click to business outcomes, crafting intuitive user flows that maximize retention.'
+      num: '01',
+      title: 'Discovery & Scope',
+      desc: 'We clarify technical requirements, user flows, project milestones, and transparent cost estimates.'
     },
     {
-      icon: <Cpu className="pillar-icon icon-cyan" />,
-      title: 'Modern Engineering',
-      desc: 'Leveraging React, Vite, and Cloud APIs for blazing fast load speeds, security, and effortless scaling.'
+      num: '02',
+      title: 'UI/UX & Architecture',
+      desc: 'Creating high-fidelity wireframes, design systems, and scalable backend database schemas.'
     },
     {
-      icon: <Palette className="pillar-icon icon-coral" />,
-      title: 'Bespoke Aesthetics',
-      desc: 'Eye-catching glassmorphism, vibrant palettes, and custom motion design that position you as an industry leader.'
+      num: '03',
+      title: 'Agile Full-Stack Build',
+      desc: 'Writing clean, modular React / Node / Mobile code with weekly staging updates for continuous feedback.'
     },
     {
-      icon: <BarChart3 className="pillar-icon icon-purple" />,
-      title: 'Conversion-Focused ROI',
-      desc: 'Every feature, CTA, and layout element is engineered to turn casual visitors into paying customers.'
+      num: '04',
+      title: 'QA & Optimization',
+      desc: 'Rigorous speed optimization, cross-browser testing, security hardening, and SEO auditing.'
+    },
+    {
+      num: '05',
+      title: 'Deployment & Support',
+      desc: 'Zero-downtime production deployment, complete source code handover, and 24/7 post-launch maintenance.'
     }
+  ];
+
+  const techPills = [
+    'React 19', 'Vite', 'Node.js', 'React Native', 'TypeScript',
+    'PostgreSQL', 'TailwindCSS', 'REST & GraphQL', 'Stripe & M-Pesa', 'AWS / Vercel'
   ];
 
   return (
     <section id="about" className="about-section">
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">WHO WE ARE</div>
+          <div className="section-badge">ABOUT US & OUR PROCESS</div>
           <h2 className="section-title">
-            Empowering Growing Businesses With{' '}
-            <span className="gradient-text-purple">World-Class</span> Digital Products
+            Engineering Fast, Reliable Software With{' '}
+            <span className="gradient-text-purple">Transparent Execution</span>
           </h2>
           <p className="section-desc">
-            At Ascendancy Solutions, we believe every business deserves a strong digital presence that inspires trust, 
-            establishes authority, and turns visitors into high-value clients.
+            At Ascendancy Solutions, we bridge the gap between design and full-stack engineering. 
+            No fluff, no hidden costs — just clean code and software engineered to perform.
           </p>
         </div>
 
-        {/* 2-Column Content Layout */}
+        {/* 2-Column Story Layout */}
         <div className="about-grid">
           {/* Left Column Story & Value Props */}
           <div className="about-story glass-card">
-            <h3 className="story-heading">Engineered For Impact & Scale</h3>
+            <h3 className="story-heading">Built On Technical Rigor & Direct Communication</h3>
             <p className="story-paragraph">
-              Whether you are launching a new tech startup, expanding an e-commerce brand, or refreshing an established corporate identity, 
-              our dedicated team combines design mastery with deep technical expertise to deliver results on time and beyond expectations.
+              Whether you are launching a new software product, upgrading a mobile app, or replacing a slow legacy website, 
+              our engineering team works directly with you at every milestone to ensure full transparency and timely delivery.
             </p>
 
             <div className="story-check-list">
@@ -62,11 +72,21 @@ export default function AboutSection() {
               </div>
               <div className="check-item">
                 <CheckCircle2 size={20} className="check-icon" />
-                <span>Integrated SEO, speed optimization & analytics tracking</span>
+                <span>Built-in speed optimization, security & SEO best practices</span>
               </div>
               <div className="check-item">
                 <CheckCircle2 size={20} className="check-icon" />
-                <span>Full source code ownership & 24/7 post-launch support</span>
+                <span>Full source code ownership & ongoing technical maintenance</span>
+              </div>
+            </div>
+
+            {/* Core Tech Stack Badges */}
+            <div className="about-tech-stack">
+              <div className="tech-stack-title">Technologies We Master:</div>
+              <div className="tech-pills-row">
+                {techPills.map((tech, i) => (
+                  <span key={i} className="tech-pill">{tech}</span>
+                ))}
               </div>
             </div>
 
@@ -75,7 +95,7 @@ export default function AboutSection() {
                 href="/docs/Ascendancy_Solutions_Capabilities_Deck_2026.pdf" 
                 download="Ascendancy_Solutions_Agency_Deck_2026.pdf" 
                 className="btn-secondary about-deck-btn"
-                title="Download our official 2026 agency deck"
+                title="Download our official agency capability deck"
               >
                 <FileDown size={18} />
                 <span>Download Agency Deck (PDF)</span>
@@ -83,15 +103,20 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right Column Pillars Grid */}
-          <div className="pillars-grid">
-            {pillars.map((item, index) => (
-              <div key={index} className="pillar-card glass-card">
-                <div className="pillar-icon-box">{item.icon}</div>
-                <h4 className="pillar-title">{item.title}</h4>
-                <p className="pillar-desc">{item.desc}</p>
-              </div>
-            ))}
+          {/* Right Column 5-Step Process */}
+          <div className="process-card glass-card">
+            <h3 className="story-heading">Our 5-Step Execution Roadmap</h3>
+            <div className="process-steps-list">
+              {processSteps.map((step, index) => (
+                <div key={index} className="process-step-item">
+                  <div className="step-number-badge">{step.num}</div>
+                  <div className="step-info">
+                    <h4 className="step-title">{step.title}</h4>
+                    <p className="step-desc">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

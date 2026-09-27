@@ -107,6 +107,89 @@
   line-height: 1.6;
 }
 
+.about-tech-stack {
+  margin-top: 24px;
+}
+
+.tech-stack-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.tech-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-pill {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.82rem;
+  color: var(--accent-cyan);
+  font-weight: 500;
+}
+
+.process-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.process-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.process-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.process-step-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.step-number-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2));
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 @media (max-width: 992px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -117,7 +200,7 @@
   .pillars-grid {
     grid-template-columns: 1fr;
   }
-  .about-story {
-    padding: 28px;
+  .about-story, .process-card {
+    padding: 24px;
   }
 }

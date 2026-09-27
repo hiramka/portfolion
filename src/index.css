@@ -4,38 +4,40 @@
   --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Outfit', sans-serif;
 
-  /* Color Palette - Ascendancy Dark Mode Theme */
+  /* Color Palette - Ascendancy Dark Mode Theme with Vibrant Gradients */
   --bg-dark: #070814;
   --bg-card: #0F1128;
   --bg-card-hover: #151838;
   --bg-glass: rgba(15, 17, 40, 0.7);
   --border-glass: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(115, 96, 242, 0.4);
+  --border-hover: rgba(139, 92, 246, 0.4);
 
   --text-main: #F4F6FD;
   --text-muted: #9AA1C0;
   --text-dim: #676F92;
 
-  /* Accent Gradients */
-  --primary-purple: #7360F2;
-  --primary-purple-glow: rgba(115, 96, 242, 0.3);
+  /* Accent Gradients inspired by modern design */
+  --primary-purple: #8B5CF6;
+  --primary-purple-glow: rgba(139, 92, 246, 0.35);
 
-  --accent-cyan: #1AECF5;
-  --accent-cyan-blue: #40CCFC;
-  --accent-cyan-glow: rgba(26, 236, 245, 0.3);
+  --accent-cyan: #00F2FE;
+  --accent-cyan-blue: #4FACFE;
+  --accent-cyan-glow: rgba(0, 242, 254, 0.35);
 
-  --accent-coral: #FF7268;
-  --accent-orange: #FF936B;
-  --accent-coral-glow: rgba(255, 114, 104, 0.3);
+  --accent-coral: #FF6B6B;
+  --accent-orange: #FF8E53;
+  --accent-coral-glow: rgba(255, 107, 107, 0.3);
 
-  --gradient-purple: linear-gradient(135deg, #7360F2 0%, #B452FF 100%);
-  --gradient-cyan: linear-gradient(135deg, #40CCFC 0%, #1AECF5 100%);
-  --gradient-coral: linear-gradient(135deg, #FF7268 0%, #FF936B 100%);
-  --gradient-emerald: linear-gradient(135deg, #35E1B4 0%, #1AECF5 100%);
+  --gradient-purple: linear-gradient(135deg, #7C3AED 0%, #C084FC 100%);
+  --gradient-cyan: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
+  --gradient-cyan-radial: radial-gradient(circle at center, #00F2FE 0%, #00B4DB 60%, #0083B0 100%);
+  --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+  --gradient-emerald: linear-gradient(135deg, #00F5D4 0%, #00BBF9 100%);
   --gradient-dark-purple: linear-gradient(180deg, #2F057B 0%, #6441C1 100%);
+  --gradient-soft-lavender: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(192, 132, 252, 0.1) 100%);
   
   --shadow-glass: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  --shadow-glow: 0 10px 30px rgba(115, 96, 242, 0.25);
+  --shadow-glow: 0 10px 30px rgba(139, 92, 246, 0.25);
   
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -145,16 +147,17 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 18px;
+  padding: 7px 20px;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  background: rgba(115, 96, 242, 0.12);
-  border: 1px solid rgba(115, 96, 242, 0.3);
-  color: var(--primary-purple);
-  margin-bottom: 16px;
+  background: rgba(139, 92, 246, 0.16);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  color: #B39DFF;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
 }
 
 .section-title {
@@ -168,6 +171,43 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.15rem;
   color: var(--text-muted);
   line-height: 1.7;
+}
+
+/* Decorative Background Elements (Reference Design) */
+.decor-cyan-semicircle {
+  position: absolute;
+  top: -25px;
+  left: 12%;
+  width: 260px;
+  height: 130px;
+  border-bottom-left-radius: 260px;
+  border-bottom-right-radius: 260px;
+  background: var(--gradient-cyan);
+  box-shadow: 0 16px 45px rgba(0, 242, 254, 0.4);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decor-purple-wave {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decor-bg-glow-right {
+  position: absolute;
+  top: -40px;
+  right: -60px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.16) 0%, rgba(7, 8, 20, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Buttons */

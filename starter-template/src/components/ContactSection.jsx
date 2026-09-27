@@ -44,14 +44,14 @@ export default function ContactSection({ onBookCall }) {
         },
         body: JSON.stringify({
           access_key: accessKey,
+          subject: `🚀 New Inquiry: ${formData.name} - ${formData.service}`,
+          from_name: `${formData.name} (Portfolio Contact)`,
+          replyto: formData.email,
           name: formData.name,
           email: formData.email,
-          message: formData.message,
           service: formData.service,
           budget: formData.budget,
-          subject: `New inquiry from ${formData.name}`,
-          from_name: formData.name,
-          replyto: formData.email
+          message: formData.message
         })
       });
 

@@ -12,70 +12,70 @@ export default function PortfolioSection() {
   const projects = [
     {
       id: 'fintech-saas',
-      title: 'Apex Vault - Financial Analytics Platform',
+      title: 'Apex Vault - Financial Analytics Portal',
       category: 'Web Development',
       image: '/images/web_app.webp',
-      impact: '+340% User Engagement',
-      client: 'Apex Capital Inc.',
+      impact: '< 180ms Global Load',
+      client: 'Apex Analytics Ltd.',
       techStack: ['React', 'Vite', 'Node.js', 'Chart.js'],
-      shortDesc: 'A high-performance SaaS analytics suite providing real-time portfolio insights and automated financial reporting.',
-      challenge: 'Apex Capital required a modern, ultra-fast web application to visualize complex financial data streams for 50,000+ institutional clients without latency.',
-      solution: 'We engineered a custom React/Vite dashboard leveraging WebSockets for real-time tick data, glassmorphic UI cards, and responsive data charts.',
+      shortDesc: 'A high-performance financial dashboard featuring real-time data visualizers, customizable widgets, and automated PDF reporting.',
+      challenge: 'The client’s legacy reporting portal suffered from slow 4s load times, bloated database queries, and poor mobile responsiveness.',
+      solution: 'We engineered a lightweight React/Vite dashboard leveraging virtualized data tables, client-side caching, and responsive Chart.js components.',
       results: [
-        '340% increase in daily active user session duration',
-        'Sub-100ms dashboard load speed globally',
-        '$4.2M in new client assets onboarded within 90 days'
+        'Reduced initial dashboard load time from 4.2s to sub-180ms globally.',
+        'Streamlined financial reporting workflow for over 5,000 daily users.',
+        'Delivered 100% mobile responsive UI across desktop, tablet, and mobile.'
       ]
     },
     {
       id: 'fit-mobile-app',
-      title: 'PulseFit - AI Health & Workout Companion',
+      title: 'PulseFit - Cross-Platform Fitness Companion',
       category: 'Mobile Apps',
       image: '/images/mobile_app.webp',
-      impact: '4.9★ App Store Rating',
+      impact: '4.9★ Store Rating',
       client: 'Pulse Health Technologies',
       techStack: ['React Native', 'TypeScript', 'GraphQL', 'Firebase'],
-      shortDesc: 'Cross-platform iOS and Android mobile app featuring AI workout tracking, habit analytics, and live trainer chat.',
-      challenge: 'Pulse Health needed a unified mobile experience across iOS and Android with offline sync capabilities and real-time step counter telemetry.',
-      solution: 'Built a sleek React Native application with biometrics, dark-mode futuristic UI, and automated offline data synchronization.',
+      shortDesc: 'Cross-platform iOS and Android mobile app featuring workout tracking, biometrics authentication, and offline data sync.',
+      challenge: 'Pulse Health needed a unified codebase across iOS and Android without sacrificing native speed, biometric login, or offline step sync.',
+      solution: 'Built a sleek React Native application with offline SQLite caching, smooth 60fps animations, and biometric security integration.',
       results: [
-        'Over 120,000 active app downloads in first 6 months',
-        'Maintained a 4.9 out of 5 stars average App Store review',
-        '84% user retention rate past 30 days'
+        'Simultaneous iOS & Android deployment delivered on schedule within 8 weeks.',
+        'Maintained 4.9 out of 5 stars average user review rating.',
+        'Seamless offline data syncing with zero data loss during connectivity drops.'
       ]
     },
     {
       id: 'luxury-storefront',
-      title: 'Aura Luxe - High-Fashion E-Commerce',
+      title: 'Aura Luxe - Modern E-Commerce Storefront',
       category: 'E-Commerce',
       image: '/images/ecommerce.webp',
-      impact: '$1.8M Revenue Generated',
-      client: 'Aura International Brand',
-      techStack: ['Headless Shopify', 'React', 'Stripe', 'Tailwind'],
-      shortDesc: 'Next-gen luxury storefront with instant checkout, multi-currency support, and dynamic product customizers.',
-      challenge: 'Legacy WooCommerce site suffered from 4.8s page load times and high cart abandonment rates on mobile devices.',
-      solution: 'Rebuilt as a Headless Shopify store with PWA capabilities, 1-click Stripe express checkout, and high-res video galleries.',
+      impact: '+28% Checkout Rate',
+      client: 'Aura Retail Group',
+      techStack: ['Headless React', 'Stripe', 'Node.js', 'Tailwind'],
+      shortDesc: 'Ultra-fast digital storefront with instant product filtering, streamlined express checkout, and mobile payment gateway integration.',
+      challenge: 'Legacy e-commerce store suffered from high cart abandonment on mobile due to slow checkout pages and bulky image assets.',
+      solution: 'Rebuilt the storefront as a lightweight React application with webp image pipelines, 1-click Stripe express checkout, and instant search.',
       results: [
-        'Cart abandonment dropped by 42%',
-        'Mobile conversion rate increased from 1.2% to 3.8%',
-        'Over $1.8M sales processed in Q4 campaign'
+        'Mobile cart completion rate increased by 28% in first 60 days.',
+        'Page speed score jumped from 38 to 96 on Google PageSpeed Insights.',
+        'Full automated order tracking and inventory sync integration.'
       ]
     },
     {
       id: 'brand-identity-system',
-      title: 'Vanguard Cyber - Full Brand Identity',
+      title: 'Vanguard Security - Corporate Brand & UI System',
       category: 'Branding & Design',
       image: '/images/branding.webp',
-      impact: 'Global Rebrand Award',
+      impact: 'Unified Design Tokens',
       client: 'Vanguard Security Corp',
-      techStack: ['Figma', 'Brand Design', 'UI/UX', 'Vector Motion'],
-      shortDesc: 'Complete corporate visual identity system including logo design, 3D brand book, UI kit, and marketing collateral.',
-      challenge: 'Vanguard needed to transition from an legacy IT firm to a top-tier cybersecurity authority ahead of Series-B fundraising.',
-      solution: 'Designed a modern neon-accented identity system with strict grid guidelines, interactive Figma design tokens, and investor decks.',
+      techStack: ['Figma', 'Design Systems', 'UI/UX', 'CSS Tokens'],
+      shortDesc: 'Complete corporate visual identity system, interactive Figma component UI kit, dark-mode design tokens, and corporate website.',
+      challenge: 'Disjointed design assets and inconsistent brand elements across mobile apps, marketing decks, and customer portals.',
+      solution: 'Crafted a unified brand identity system with reusable Figma UI components, dark-mode CSS tokens, and comprehensive brand guidelines.',
       results: [
-        'Successfully closed $18M Series-B funding round',
-        'Unified 12 global branch offices under single brand guide',
-        'Won 2025 International Brand Identity Excellence award'
+        'Delivered 40-page master brand guidelines & UI component library.',
+        'Standardized design tokens across web apps and marketing sites.',
+        'Streamlined future feature design sprints by 40%.'
       ]
     }
   ];

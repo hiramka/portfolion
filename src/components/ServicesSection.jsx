@@ -117,12 +117,32 @@ export default function ServicesSection({ onGetStarted }) {
 
   return (
     <section id="services" className="services-section">
-      <div className="container">
+      {/* Decorative Gradient Background Elements inspired by reference design */}
+      <div className="decor-cyan-semicircle" />
+      <div className="decor-bg-glow-right" />
+      <svg className="decor-purple-wave" viewBox="0 0 1200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path 
+          d="M-50 180 C 200 40, 450 260, 750 120 C 950 20, 1150 160, 1300 80" 
+          stroke="url(#purpleWaveGradient)" 
+          strokeWidth="2.5" 
+          strokeLinecap="round" 
+          opacity="0.65" 
+        />
+        <defs>
+          <linearGradient id="purpleWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#C4B5FD" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#00F2FE" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="section-header">
-          <div className="section-badge">SERVICES WE OFFER</div>
+          <div className="section-badge">OUR SERVICES</div>
           <h2 className="section-title">
-            Tailored Digital Solutions Built For{' '}
-            <span className="gradient-text-cyan">Maximum Growth</span>
+            What We Offer For{' '}
+            <span className="gradient-text-cyan">Your Business</span>
           </h2>
           <p className="section-desc">
             From custom web and mobile apps to e-commerce storefronts and targeted marketing, 

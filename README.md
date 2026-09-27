@@ -42,26 +42,32 @@ Ascendancy Solutions is a modern, full-service digital agency portfolio designed
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher recommended)
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/hiramka/portfolion.git
    cd portfolion
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Configure Environment Variables**:
    Create a `.env` file in the root directory (or copy from `.env.example`):
+
    ```env
+   VITE_APP_ENV=development
    VITE_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key_here
+   VITE_ENABLE_ANALYTICS=false
    ```
 
 4. **Run the development server**:
@@ -70,16 +76,43 @@ Ascendancy Solutions is a modern, full-service digital agency portfolio designed
    ```
    Open [http://localhost:5173](http://localhost:5173) in your browser.
 
+### Production Environment Contract
+
+The application fails fast if required environment variables are missing or invalid.
+
+Required contract:
+
+```env
+VITE_APP_ENV=production|staging|development
+VITE_WEB3FORMS_ACCESS_KEY=<valid key>
+VITE_ENABLE_ANALYTICS=true|false
+```
+
+Environment rules:
+
+- `VITE_WEB3FORMS_ACCESS_KEY` is required in all runtime environments.
+- The app will throw at startup when the variable is missing, empty, or still set to the example placeholder.
+- `VITE_APP_ENV` must be one of `development`, `staging`, or `production`.
+- Analytics must be explicitly enabled in each environment.
+- Staging and production must use separate values to avoid cross-environment leakage.
+
+### Production Hardening Checklist
+
+- `npm test` runs regression checks for config and form behavior.
+- `npm run rollout:check` validates required project files and release tooling.
+- `npm run audit:accessibility` produces a deployment checklist for accessibility and performance review.
+- CI runs lint, tests, and a production build before deployment.
+
 ---
 
 ## 📦 Scripts
 
-| Command | Description |
-| :--- | :--- |
-| `npm run dev` | Starts Vite dev server with Hot Module Replacement |
-| `npm run build` | Compiles optimized production bundle into `dist/` |
-| `npm run preview` | Locally previews the production build |
-| `npm run lint` | Runs Oxlint for fast code quality checks |
+| Command           | Description                                        |
+| :---------------- | :------------------------------------------------- |
+| `npm run dev`     | Starts Vite dev server with Hot Module Replacement |
+| `npm run build`   | Compiles optimized production bundle into `dist/`  |
+| `npm run preview` | Locally previews the production build              |
+| `npm run lint`    | Runs Oxlint for fast code quality checks           |
 
 ---
 

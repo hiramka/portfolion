@@ -13,25 +13,25 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
         <div className="hero-content">
           <div className="hero-badge animate-float">
             <Sparkles size={16} className="badge-sparkle" />
-            <span>EXPERT DIGITAL SOLUTIONS FOR GROWING BUSINESSES</span>
+            <span>FULL-STACK WEB & MOBILE DEVELOPMENT AGENCY</span>
           </div>
 
           <h1 className="hero-title">
-            Transform Your Brand With High-Converting{' '}
-            <span className="gradient-text-purple">Websites</span> &{' '}
-            <span className="gradient-text-cyan">Digital Products</span>
+            We Design & Build Custom{' '}
+            <span className="gradient-text-purple">Web Apps</span>,{' '}
+            <span className="gradient-text-cyan">Mobile Applications</span> & Scalable E-Commerce Stores
           </h1>
 
           <p className="hero-description">
-            At Ascendancy Solutions, we craft bespoke web applications, cross-platform mobile apps, 
-            scalable e-commerce storefronts, and brand identities designed to captivate audiences 
-            and turn visitors into loyal paying customers.
+            At Ascendancy Solutions, we partner directly with startups, local businesses, and scale-ups 
+            to engineer ultra-fast software products, intuitive interfaces, and high-performance digital platforms 
+            built to grow your business.
           </p>
 
           <div className="hero-actions">
             <button onClick={onBookCall} className="btn-primary hero-btn-main">
               <Calendar size={18} />
-              <span>Book Discovery Call</span>
+              <span>Book Free Strategy Call</span>
             </button>
 
             <a href="#services" className="btn-secondary hero-btn-secondary">
@@ -41,7 +41,7 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
 
             <div className="hero-action-badge">
               <span className="pulse-mini-dot"></span>
-              <span>Free 15-Min Strategy Session</span>
+              <span>15-Min Focused Consultation</span>
             </div>
           </div>
 
@@ -53,7 +53,7 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
               ))}
             </div>
             <div className="trust-text">
-              <strong>4.9/5 Rating</strong> from 15+ verified business clients worldwide
+              <strong>5.0★ Rating</strong> across 20+ delivered client projects worldwide
             </div>
           </div>
         </div>
@@ -68,14 +68,14 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
                 <span className="dot yellow"></span>
                 <span className="dot green"></span>
               </div>
-              <div className="card-title-pill">ascendancy-engine.v2.4.active</div>
+              <div className="card-title-pill">ascendancy-solutions.app/live-preview</div>
             </div>
 
             {/* Showcase Visual Content */}
             <div className="card-inner-visual">
               <img 
                 src="/images/web_app.webp" 
-                alt="Ascendancy Engine Dashboard" 
+                alt="Ascendancy Web Application Dashboard" 
                 className="hero-dashboard-img"
                 width="600"
                 height="380"
@@ -89,8 +89,8 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
                   <TrendingUp size={20} />
                 </div>
                 <div>
-                  <div className="stat-val">+310%</div>
-                  <div className="stat-lbl">Conversion Increase</div>
+                  <div className="stat-val">&lt; 200ms</div>
+                  <div className="stat-lbl">Global Load Speed</div>
                 </div>
               </div>
 
@@ -99,8 +99,8 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
                   <ShieldCheck size={20} />
                 </div>
                 <div>
-                  <div className="stat-val">99.4%</div>
-                  <div className="stat-lbl">Client Retention</div>
+                  <div className="stat-val">100%</div>
+                  <div className="stat-lbl">Code & IP Ownership</div>
                 </div>
               </div>
             </div>
@@ -111,20 +111,20 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
       {/* Bottom Key Metric Counters */}
       <div className="container hero-stats-grid">
         <div className="hero-stat-box glass-card">
-          <div className="stat-num gradient-text-purple">15+</div>
-          <div className="stat-label">Projects Launched</div>
+          <div className="stat-num gradient-text-purple">20+</div>
+          <div className="stat-label">Projects Delivered</div>
         </div>
         <div className="hero-stat-box glass-card">
-          <div className="stat-num gradient-text-cyan">5.0x</div>
-          <div className="stat-label">Average Client ROI</div>
+          <div className="stat-num gradient-text-cyan">&lt; 1s</div>
+          <div className="stat-label">Average Page Load</div>
         </div>
         <div className="hero-stat-box glass-card">
-          <div className="stat-num gradient-text-coral">99.4%</div>
+          <div className="stat-num gradient-text-coral">100%</div>
           <div className="stat-label">On-Time Delivery</div>
         </div>
         <div className="hero-stat-box glass-card">
           <div className="stat-num gradient-text-purple">24/7</div>
-          <div className="stat-label">Dedicated Support</div>
+          <div className="stat-label">Technical Support</div>
         </div>
       </div>
     </section>

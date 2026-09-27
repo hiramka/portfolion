@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Calendar } from 'lucide-react';
+import { reportError, trackEvent } from '../lib/monitoring';
 import './ContactSection.css';
 
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
@@ -27,15 +28,23 @@ export default function ContactSection({ onBookCall }) {
     setIsSubmitting(true);
     setSubmitError('');
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'f4f717b3-eaa8-4f1e-9139-39336e93074c';
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
-    if (!accessKey) {
-      setSubmitError('Web3Forms access key is missing. Add VITE_WEB3FORMS_ACCESS_KEY to your .env file.');
+    if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
+      const message = 'VITE_WEB3FORMS_ACCESS_KEY is missing or still set to the placeholder value. Add a valid key to your environment before deploying.';
+      reportError(new Error(message), { source: 'ContactSection.handleSubmit' });
+      setSubmitError(message);
       setIsSubmitting(false);
       return;
     }
 
     try {
+      trackEvent('contact_form_submit', {
+        service: formData.service,
+        budget: formData.budget,
+        environment: import.meta.env.MODE,
+      });
+
       const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
         headers: {
@@ -44,14 +53,14 @@ export default function ContactSection({ onBookCall }) {
         },
         body: JSON.stringify({
           access_key: accessKey,
+          subject: `🚀 New Inquiry: ${formData.name} - ${formData.service}`,
+          from_name: `${formData.name} (Portfolio Contact)`,
+          replyto: formData.email,
           name: formData.name,
           email: formData.email,
-          message: formData.message,
           service: formData.service,
           budget: formData.budget,
-          subject: `New inquiry from ${formData.name}`,
-          from_name: formData.name,
-          replyto: formData.email
+          message: formData.message
         })
       });
 
@@ -61,9 +70,15 @@ export default function ContactSection({ onBookCall }) {
         throw new Error(result.message || 'The form could not be submitted. Please try again.');
       }
 
+      trackEvent('lead_submission_success', {
+        service: formData.service,
+        environment: import.meta.env.MODE,
+      });
       setSubmitted(true);
     } catch (error) {
-      setSubmitError(error.message || 'Something went wrong while sending the message.');
+      const message = error.message || 'Something went wrong while sending the message.';
+      reportError(error, { source: 'ContactSection.handleSubmit', action: 'lead_submission_failed' });
+      setSubmitError(message);
     } finally {
       setIsSubmitting(false);
     }
