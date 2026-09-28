@@ -18,9 +18,9 @@ export default function HeroSection({ onGetStarted, onBookCall }) {
         />
         <defs>
           <linearGradient id="heroPurpleWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#C4B5FD" stopOpacity="0.9" />
-            <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#00F2FE" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#e5e5e5" stopOpacity="0.5" />
+            <stop offset="50%" stopColor="#a1a1aa" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#71717a" stopOpacity="0.2" />
           </linearGradient>
         </defs>
       </svg>

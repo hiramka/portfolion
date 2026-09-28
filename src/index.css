@@ -4,40 +4,40 @@
   --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Outfit', sans-serif;
 
-  /* Color Palette - Ascendancy Dark Mode Theme with Vibrant Gradients */
-  --bg-dark: #070814;
-  --bg-card: #0F1128;
-  --bg-card-hover: #151838;
-  --bg-glass: rgba(15, 17, 40, 0.7);
+  /* Color Palette - Ascendancy Dark Mode Theme with Minimalist Grey/Monochrome */
+  --bg-dark: #0a0a0a;
+  --bg-card: #171717;
+  --bg-card-hover: #262626;
+  --bg-glass: rgba(23, 23, 23, 0.7);
   --border-glass: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(139, 92, 246, 0.4);
+  --border-hover: rgba(255, 255, 255, 0.25);
 
-  --text-main: #F4F6FD;
-  --text-muted: #9AA1C0;
-  --text-dim: #676F92;
+  --text-main: #f5f5f5;
+  --text-muted: #a3a3a3;
+  --text-dim: #737373;
 
-  /* Accent Gradients inspired by modern design */
-  --primary-purple: #8B5CF6;
-  --primary-purple-glow: rgba(139, 92, 246, 0.35);
+  /* Accent Gradients inspired by sleek modern silver/grey design */
+  --primary-purple: #e5e5e5;
+  --primary-purple-glow: rgba(255, 255, 255, 0.08);
 
-  --accent-cyan: #00F2FE;
-  --accent-cyan-blue: #4FACFE;
-  --accent-cyan-glow: rgba(0, 242, 254, 0.35);
+  --accent-cyan: #ffffff;
+  --accent-cyan-blue: #d4d4d8;
+  --accent-cyan-glow: rgba(255, 255, 255, 0.12);
 
-  --accent-coral: #FF6B6B;
-  --accent-orange: #FF8E53;
-  --accent-coral-glow: rgba(255, 107, 107, 0.3);
+  --accent-coral: #a1a1aa;
+  --accent-orange: #71717a;
+  --accent-coral-glow: rgba(255, 255, 255, 0.05);
 
-  --gradient-purple: linear-gradient(135deg, #7C3AED 0%, #C084FC 100%);
-  --gradient-cyan: linear-gradient(115deg, #00F5E8 0%, #38C8F4 100%);
-  --gradient-cyan-radial: radial-gradient(circle at center, #00F2FE 0%, #00B4DB 60%, #0083B0 100%);
-  --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
-  --gradient-emerald: linear-gradient(135deg, #00F5D4 0%, #00BBF9 100%);
-  --gradient-dark-purple: linear-gradient(180deg, #2F057B 0%, #6441C1 100%);
-  --gradient-soft-lavender: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(192, 132, 252, 0.1) 100%);
+  --gradient-purple: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  --gradient-cyan: linear-gradient(135deg, #f4f4f5 0%, #d4d4d8 100%);
+  --gradient-cyan-radial: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  --gradient-coral: linear-gradient(135deg, #d4d4d8 0%, #71717a 100%);
+  --gradient-emerald: linear-gradient(135deg, #e4e4e7 0%, #a1a1aa 100%);
+  --gradient-dark-purple: linear-gradient(180deg, #262626 0%, #171717 100%);
+  --gradient-soft-lavender: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
   
-  --shadow-glass: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  --shadow-glow: 0 10px 30px rgba(139, 92, 246, 0.25);
+  --shadow-glass: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-glow: 0 10px 30px rgba(255, 255, 255, 0.08);
   
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -153,9 +153,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  background: rgba(139, 92, 246, 0.16);
-  border: 1px solid rgba(167, 139, 250, 0.35);
-  color: #B39DFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e5e5;
   margin-bottom: 20px;
   backdrop-filter: blur(8px);
 }

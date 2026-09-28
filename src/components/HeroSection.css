@@ -30,9 +30,9 @@
   gap: 10px;
   padding: 8px 22px;
   border-radius: var(--radius-full);
-  background: rgba(139, 92, 246, 0.16);
-  border: 1px solid rgba(167, 139, 250, 0.35);
-  color: #B39DFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e5e5;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 1.2px;
