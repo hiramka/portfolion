@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Cpu, Palette, BarChart3, CheckCircle2, FileDown, Code2, ShieldCheck, Zap, Rocket, Layers } from 'lucide-react';
+import { Target, Cpu, Palette, BarChart3, CheckCircle2, FileDown } from 'lucide-react';
 import './AboutSection.css';
 
 export default function AboutSection() {

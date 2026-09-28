@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, Sparkles } from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 import './FaqSection.css';
 
 export default function FaqSection() {

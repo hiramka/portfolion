@@ -26,9 +26,11 @@ export function useFetch(url, options = {}) {
     } finally {
       setLoading(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
 
   useEffect(() => {
+    // eslint-disable-next-line react/set-state-in-effect
     fetchData();
   }, [fetchData]);
 

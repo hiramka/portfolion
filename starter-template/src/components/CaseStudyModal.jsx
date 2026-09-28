@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle2, TrendingUp, ShieldCheck, ArrowRight, ExternalLink } from 'lucide-react';
+import { X, CheckCircle2, TrendingUp, ArrowRight } from 'lucide-react';
 import './CaseStudyModal.css';
 
 export default function CaseStudyModal({ project, onClose }) {

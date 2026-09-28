@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ShieldCheck, FileText, Lock, CheckCircle, ArrowRight } from 'lucide-react';
+import { X, ShieldCheck, FileText, Lock, ArrowRight } from 'lucide-react';
 import './LegalModal.css';
 
 export default function LegalModal({ isOpen, onClose, activeTab = 'privacy', onTabChange }) {
