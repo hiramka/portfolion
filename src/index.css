@@ -1,43 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Outfit', sans-serif;
+  --font-primary: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'DM Serif Display', serif;
 
-  /* Color Palette - Ascendancy Dark Mode Theme with Minimalist Grey/Monochrome */
-  --bg-dark: #0a0a0a;
-  --bg-card: #171717;
-  --bg-card-hover: #262626;
-  --bg-glass: rgba(23, 23, 23, 0.7);
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.25);
+  /* Color Palette - Forest, Cream & Marigold Theme */
+  --bg-dark: #F5F1EB; /* Cream Background */
+  --bg-card: #FFFFFF; /* White Cards */
+  --bg-card-hover: #F9F7F4;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --border-glass: rgba(0, 0, 0, 0.05);
+  --border-hover: rgba(18, 55, 42, 0.15);
 
-  --text-main: #f5f5f5;
-  --text-muted: #a3a3a3;
-  --text-dim: #737373;
+  --text-main: #0B241B; /* Deep Green Text */
+  --text-muted: #6B6B63; /* Warm Gray */
+  --text-dim: #8E8E85;
 
-  /* Accent Gradients inspired by sleek modern silver/grey design */
-  --primary-purple: #e5e5e5;
-  --primary-purple-glow: rgba(255, 255, 255, 0.08);
+  /* Accent Colors inspired by Brand Reference */
+  --primary-purple: #12372A; /* Forest Green */
+  --primary-purple-glow: rgba(18, 55, 42, 0.1);
 
-  --accent-cyan: #ffffff;
-  --accent-cyan-blue: #d4d4d8;
-  --accent-cyan-glow: rgba(255, 255, 255, 0.12);
+  --accent-cyan: #B08D57; /* Marigold */
+  --accent-cyan-blue: #C39F67;
+  --accent-cyan-glow: rgba(176, 141, 87, 0.15);
 
-  --accent-coral: #a1a1aa;
-  --accent-orange: #71717a;
-  --accent-coral-glow: rgba(255, 255, 255, 0.05);
+  --accent-coral: #B08D57;
+  --accent-orange: #C39F67;
+  --accent-coral-glow: rgba(176, 141, 87, 0.1);
 
-  --gradient-purple: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
-  --gradient-cyan: linear-gradient(135deg, #f4f4f5 0%, #d4d4d8 100%);
-  --gradient-cyan-radial: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-  --gradient-coral: linear-gradient(135deg, #d4d4d8 0%, #71717a 100%);
-  --gradient-emerald: linear-gradient(135deg, #e4e4e7 0%, #a1a1aa 100%);
-  --gradient-dark-purple: linear-gradient(180deg, #262626 0%, #171717 100%);
-  --gradient-soft-lavender: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  /* Flat gradients / solid mapped over previous gradients */
+  --gradient-purple: linear-gradient(135deg, #12372A 0%, #0B241B 100%);
+  --gradient-cyan: linear-gradient(135deg, #B08D57 0%, #C39F67 100%);
+  --gradient-cyan-radial: radial-gradient(circle at center, rgba(18,55,42,0.03) 0%, rgba(245,241,235,0) 70%);
+  --gradient-coral: linear-gradient(135deg, #B08D57 0%, #C39F67 100%);
+  --gradient-emerald: linear-gradient(135deg, #12372A 0%, #0B241B 100%);
+  --gradient-dark-purple: linear-gradient(180deg, #F5F1EB 0%, #F9F7F4 100%);
+  --gradient-soft-lavender: linear-gradient(135deg, rgba(18, 55, 42, 0.04) 0%, rgba(18, 55, 42, 0.01) 100%);
   
-  --shadow-glass: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  --shadow-glow: 0 10px 30px rgba(255, 255, 255, 0.08);
+  --shadow-glass: 0 4px 20px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --shadow-glow: 0 4px 15px rgba(176, 141, 87, 0.15);
   
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -96,44 +97,37 @@ body {
 /* Typography Utilities */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: #FFFFFF;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  color: var(--text-main);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .gradient-text-purple {
-  background: var(--gradient-purple);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-main);
 }
 
 .gradient-text-cyan {
-  background: var(--gradient-cyan);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-cyan);
 }
 
 .gradient-text-coral {
-  background: var(--gradient-coral);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-cyan);
 }
 
-/* Glassmorphism Card */
+/* Glassmorphism Card (Now Solid White Cards for Light Theme) */
 .glass-card {
-  background: var(--bg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-glass);
+  background: var(--bg-card);
+  border: 1px solid rgba(0,0,0,0.03);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-glass);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   transition: var(--transition-normal);
 }
 
 .glass-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
+  border-color: rgba(18, 55, 42, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 
 /* Section Header */
@@ -147,17 +141,12 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 20px;
-  border-radius: var(--radius-full);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 1.2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e5e5e5;
+  color: var(--text-muted);
   margin-bottom: 20px;
-  backdrop-filter: blur(8px);
 }
 
 .section-title {
@@ -175,39 +164,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Decorative Background Elements (Reference Design) */
 .decor-cyan-semicircle {
-  position: absolute;
-  top: -25px;
-  left: 12%;
-  width: min(425px, 42vw);
-  height: 300px;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  background: var(--gradient-cyan);
-  box-shadow: none;
-  pointer-events: none;
-  z-index: 1;
+  display: none;
 }
 
 .decor-purple-wave {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  pointer-events: none;
-  z-index: 1;
+  display: none;
 }
 
 .decor-bg-glow-right {
-  position: absolute;
-  top: -40px;
-  right: -60px;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(196, 181, 253, 0.13) 0%, rgba(196, 181, 253, 0.045) 45%, rgba(196, 181, 253, 0) 72%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 /* Buttons */
@@ -215,35 +180,37 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 32px;
-  border-radius: var(--radius-full);
-  background: var(--gradient-purple);
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-cyan); /* Marigold */
   color: #FFFFFF;
-  font-weight: 600;
-  font-size: 1rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
   border: none;
   cursor: pointer;
-  box-shadow: 0 8px 24px var(--primary-purple-glow);
   transition: var(--transition-normal);
   text-decoration: none;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(115, 96, 242, 0.45);
+  background: var(--accent-cyan-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(176, 141, 87, 0.3);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 32px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-glass);
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: var(--transition-normal);
   text-decoration: none;
