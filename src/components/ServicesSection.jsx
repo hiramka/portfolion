@@ -126,13 +126,13 @@ export default function ServicesSection({ onGetStarted }) {
           stroke="url(#purpleWaveGradient)" 
           strokeWidth="2.5" 
           strokeLinecap="round" 
-          opacity="0.65" 
+          opacity="0.55" 
         />
         <defs>
           <linearGradient id="purpleWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#C4B5FD" stopOpacity="0.9" />
-            <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#00F2FE" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#D8D0FF" stopOpacity="0.8" />
+            <stop offset="55%" stopColor="#C9BEFF" stopOpacity="0.65" />
+            <stop offset="100%" stopColor="#D8D0FF" stopOpacity="0.45" />
           </linearGradient>
         </defs>
       </svg>

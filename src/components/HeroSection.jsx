@@ -5,10 +5,30 @@ import './HeroSection.css';
 export default function HeroSection({ onGetStarted, onBookCall }) {
   return (
     <section id="home" className="hero-section">
+      {/* Decorative Gradient Background Elements inspired by reference design */}
+      <div className="decor-cyan-semicircle" />
+      <div className="decor-bg-glow-right" />
+      <svg className="decor-purple-wave" viewBox="0 0 1200 240" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ top: '-40px' }}>
+        <path 
+          d="M-50 180 C 200 40, 450 260, 750 120 C 950 20, 1150 160, 1300 80" 
+          stroke="url(#heroPurpleWaveGradient)" 
+          strokeWidth="2.5" 
+          strokeLinecap="round" 
+          opacity="0.65" 
+        />
+        <defs>
+          <linearGradient id="heroPurpleWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#C4B5FD" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#00F2FE" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       <div className="bg-glow-purple hero-glow-top"></div>
       <div className="bg-glow-cyan hero-glow-bottom"></div>
 
-      <div className="container hero-container">
+      <div className="container hero-container" style={{ position: 'relative', zIndex: 2 }}>
         {/* Left Column Text Content */}
         <div className="hero-content">
           <div className="hero-badge animate-float">

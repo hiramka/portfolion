@@ -29,7 +29,7 @@
   --accent-coral-glow: rgba(255, 107, 107, 0.3);
 
   --gradient-purple: linear-gradient(135deg, #7C3AED 0%, #C084FC 100%);
-  --gradient-cyan: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
+  --gradient-cyan: linear-gradient(115deg, #00F5E8 0%, #38C8F4 100%);
   --gradient-cyan-radial: radial-gradient(circle at center, #00F2FE 0%, #00B4DB 60%, #0083B0 100%);
   --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
   --gradient-emerald: linear-gradient(135deg, #00F5D4 0%, #00BBF9 100%);
@@ -178,12 +178,12 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: -25px;
   left: 12%;
-  width: 260px;
-  height: 130px;
-  border-bottom-left-radius: 260px;
-  border-bottom-right-radius: 260px;
+  width: min(425px, 42vw);
+  height: 300px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
   background: var(--gradient-cyan);
-  box-shadow: 0 16px 45px rgba(0, 242, 254, 0.4);
+  box-shadow: none;
   pointer-events: none;
   z-index: 1;
 }
@@ -204,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
   right: -60px;
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.16) 0%, rgba(7, 8, 20, 0) 70%);
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.13) 0%, rgba(196, 181, 253, 0.045) 45%, rgba(196, 181, 253, 0) 72%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
@@ -349,3 +349,5 @@ h1, h2, h3, h4, h5, h6 {
 .footer-logo-img {
   height: 52px;
 }
+
+
