@@ -1,6 +1,12 @@
-# Allow all search engines to crawl the site
+# Allow search engine crawlers
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Host Directive
+Host: https://ascendancysolutions.vercel.app
 
 # Sitemap Location
 Sitemap: https://ascendancysolutions.vercel.app/sitemap.xml
+

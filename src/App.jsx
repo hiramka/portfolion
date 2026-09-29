@@ -51,8 +51,11 @@ export default function App() {
     <ErrorBoundary>
       <div className="app-root">
         <SEO 
-          title="Software Development & Digital Agency" 
-          description="Transforming ideas into high-converting digital products, custom web applications, and enterprise software."
+          title="High-Converting Websites, Apps & Digital Growth" 
+          description="Ascendancy Solutions is a premier digital agency building high-converting websites, mobile apps, e-commerce storefronts, visual brands, and targeted digital growth campaigns."
+          keywords="web design, web development, mobile apps, e-commerce storefronts, graphic design, branding, video editing, motion graphics, SEO, digital marketing agency, Ascendancy Solutions"
+          url="https://ascendancysolutions.vercel.app/"
+          image="https://ascendancysolutions.vercel.app/logo.jpg"
         />
         <CustomCursor />
 

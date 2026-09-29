@@ -11,6 +11,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "audit:accessibility": "node scripts/run-audit.mjs",
+    "audit:seo": "node scripts/run-seo-audit.mjs",
     "rollout:check": "node scripts/rollout-check.mjs"
   },
   "dependencies": {

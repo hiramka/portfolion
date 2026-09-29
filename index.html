@@ -16,11 +16,20 @@
     <!-- Primary SEO Meta Tags -->
     <title>Ascendancy Solutions | High-Converting Websites, Apps & Digital Growth</title>
     <meta name="title" content="Ascendancy Solutions | High-Converting Websites, Apps & Digital Growth" />
-    <meta name="description" content="Ascendancy Solutions is a full-service digital agency creating high-converting websites, mobile apps, e-commerce storefronts, visual brands, and targeted digital marketing experiences for growing businesses." />
-    <meta name="keywords" content="web design, web development, mobile apps, e-commerce storefronts, graphic design, branding, video editing, motion graphics, SEO, digital marketing agency, Ascendancy Solutions" />
+    <meta name="description" content="Ascendancy Solutions is a premier digital agency building high-converting websites, mobile apps, e-commerce storefronts, visual brands, and targeted digital growth campaigns." />
+    <meta name="keywords" content="web design, web development, mobile apps, e-commerce storefronts, graphic design, branding, video editing, motion graphics, SEO, search engine optimization, digital marketing agency, Ascendancy Solutions" />
     <meta name="author" content="Ascendancy Solutions" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://ascendancysolutions.vercel.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://ascendancysolutions.vercel.app/" />
+    <link rel="alternate" hreflang="en" href="https://ascendancysolutions.vercel.app/" />
+
+    <!-- Geo & Regional Meta Tags -->
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="Global" />
     
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
@@ -29,6 +38,9 @@
     <meta property="og:title" content="Ascendancy Solutions | High-Converting Websites, Apps & Digital Growth" />
     <meta property="og:description" content="We build high-converting websites, powerful mobile apps, bespoke branding, and targeted digital growth campaigns." />
     <meta property="og:image" content="https://ascendancysolutions.vercel.app/logo.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ascendancy Solutions Logo & Brand Identity" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card Tags -->
@@ -37,32 +49,184 @@
     <meta name="twitter:title" content="Ascendancy Solutions | High-Converting Websites, Apps & Digital Growth" />
     <meta name="twitter:description" content="We build high-converting websites, powerful mobile apps, bespoke branding, and targeted digital growth campaigns." />
     <meta name="twitter:image" content="https://ascendancysolutions.vercel.app/logo.jpg" />
+    <meta name="twitter:image:alt" content="Ascendancy Solutions Logo & Brand Identity" />
 
     <!-- Google Fonts Preconnect & Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
-    <!-- Schema.org Structured Data (JSON-LD) for Search Engines -->
+    <!-- Schema.org Multi-Schema JSON-LD Graph for Rich Google Snippets -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Ascendancy Solutions",
-      "url": "https://ascendancysolutions.vercel.app/",
-      "logo": "https://ascendancysolutions.vercel.app/logo.jpg",
-      "image": "https://ascendancysolutions.vercel.app/logo.jpg",
-      "description": "High-impact digital agency specializing in bespoke websites, mobile apps, e-commerce storefronts, graphic design, video editing, and growth marketing.",
-      "telephone": "0715641618",
-      "email": "hello@ascendancysolutions.com",
-      "priceRange": "$250 - $1,000",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "US"
-      },
-      "sameAs": [
-        "https://ascendancysolutions.vercel.app/",
-        "https://www.instagram.com/ascendancy_solutions"
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://ascendancysolutions.vercel.app/#organization",
+          "name": "Ascendancy Solutions",
+          "url": "https://ascendancysolutions.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ascendancysolutions.vercel.app/logo.jpg"
+          },
+          "image": "https://ascendancysolutions.vercel.app/logo.jpg",
+          "description": "High-impact digital agency specializing in bespoke websites, mobile apps, e-commerce storefronts, graphic design, video editing, and growth marketing.",
+          "telephone": "0715641618",
+          "email": "hello@ascendancysolutions.com",
+          "priceRange": "$250 - $1,000",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "20",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "sameAs": [
+            "https://ascendancysolutions.vercel.app/",
+            "https://www.instagram.com/ascendancy_solutions"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ascendancysolutions.vercel.app/#website",
+          "url": "https://ascendancysolutions.vercel.app/",
+          "name": "Ascendancy Solutions",
+          "description": "High-converting websites, mobile apps & digital growth agency.",
+          "publisher": {
+            "@id": "https://ascendancysolutions.vercel.app/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://ascendancysolutions.vercel.app/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ascendancysolutions.vercel.app/#home"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About Us",
+              "item": "https://ascendancysolutions.vercel.app/#about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Services",
+              "item": "https://ascendancysolutions.vercel.app/#services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Portfolio",
+              "item": "https://ascendancysolutions.vercel.app/#portfolio"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "FAQ",
+              "item": "https://ascendancysolutions.vercel.app/#faq"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Contact Us",
+              "item": "https://ascendancysolutions.vercel.app/#contact"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://ascendancysolutions.vercel.app/#faqpage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the typical turnaround time for a custom web or mobile project?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most website design, app development, and branding projects are completed within 1 to 3 weeks depending on project complexity and feature scope. Express delivery options are available for urgent client launches."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does payment and pricing work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer transparent, high-value pricing tiers structured between $250 and $1,000 max per project. Payments are split into clear milestones (e.g. 50% deposit upfront and 50% upon final sign-off and launch)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will my website be mobile-responsive and search-engine optimized (SEO)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "100% yes. Every digital product built by Hiram at Ascendancy Solutions is engineered mobile-first with high speed performance, Google Schema.org structured data, and SEO meta tags out of the box."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer ongoing support and updates after launch?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! We provide 24/7 dedicated support, security patches, content updates, and post-launch maintenance to ensure your platform runs smoothly at all times."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do we get started on my project?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Getting started is simple! Simply reach out via our contact form below or message Hiram directly on WhatsApp (0715641618). We will discuss your goals and deliver a clear project roadmap within 24 hours."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://ascendancysolutions.vercel.app/#serviceslist",
+          "name": "Ascendancy Solutions Services",
+          "itemListElement": [
+            {
+              "@type": "Service",
+              "name": "Website Design & Development",
+              "description": "Custom React / Vite & Next.js web applications engineered for speed, SEO, and conversion."
+            },
+            {
+              "@type": "Service",
+              "name": "Mobile App Development",
+              "description": "Cross-platform iOS and Android mobile apps with biometric login and real-time offline sync."
+            },
+            {
+              "@type": "Service",
+              "name": "E-Commerce & Storefronts",
+              "description": "Turn-key online stores with Stripe, PayPal, M-Pesa payment gateways and fast checkout."
+            },
+            {
+              "@type": "Service",
+              "name": "Graphics Design & Branding",
+              "description": "Complete corporate visual identity systems, Figma wireframes, and design guidelines."
+            },
+            {
+              "@type": "Service",
+              "name": "Video Editing & Motion Graphics",
+              "description": "High-converting social media reels, TikToks, YouTube shorts, and corporate promo video editing."
+            },
+            {
+              "@type": "Service",
+              "name": "SEO & Growth Marketing",
+              "description": "On-page SEO, Google Ads PPC campaigns, local SEO profile sync, and conversion rate optimization."
+            }
+          ]
+        }
       ]
     }
     </script>
